@@ -23,16 +23,15 @@ class Main_Page(Base):
     def get_cart(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.cart)))
 
-
     # Actions:
     # Выполняем необходимые действия с полученными полями
     def click_add_product_1(self):
         self.get_add_product_1().click()
         print('Input add_product_1')
+
     def click_to_cart(self):
         self.get_cart().click()
         print('Click to cart')
-
 
     # Methods
 
