@@ -25,7 +25,7 @@ class Base():
         """Создаем переменную screenshot к которой добавляем now_date(так мы получаем уникальное значение имени скриншота). Можно в название скриншота указывать имя конкретного теста к которому он относится"""
         name_screenshot = 'screenshot' + now_date + '.png'
         self.driver.save_screenshot(
-            'C:\\Users\\Дима\\PycharmProjects\\Final Project Test Automation\\Final-Project-Course-Selenium\\screen\\' + name_screenshot)
+            'C:\\Users\\Дима\\PycharmProjects\\Final Project Test Automation\\Final_Project_Course_Selenium\\screen\\' + name_screenshot)
 
     """"Method get current url"""
 
