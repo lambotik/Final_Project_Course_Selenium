@@ -19,21 +19,6 @@ def test_buy_product():
     login.authorization()
 
     mp = Main_Page(driver)
-    mp.select_product()
+    mp.select_burger_menu_about()
 
-    cp = Cart_Page(driver)
-    cp.product_confirmation()
-
-    cip = Client_Informayion_Page(driver)
-    cip.input_information()
-
-    p = Payment_Page(driver)
-    p.payment()
-
-    f = Finish_Page(driver)
-    f.finish()
-
-    enter_shopping_cart = WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable((By.XPATH, "//div[@id='shopping_cart_container']")))
-    enter_shopping_cart.click()
-    print('Click Shopping Cart')
+    print('Finish Test')
