@@ -1,39 +1,67 @@
-from pages.cart_page import Cart_Page
-from pages.client_information_page import Client_Informayion_Page
-from pages.login_page import Login_Page
-from pages.main_page import Main_Page
-from pages.payment_page import Payment_Page
-from pages.finish_page import Finish_Page
+import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
 
-def test_buy_product():
+from pages.cart_page import Cart_Page
+from pages.login_page import Login_Page
+from pages.main_page import Main_Page
+
+
+@pytest.mark.run(order=2)
+def test_buy_product_1():
     s = Service('C:\\Users\\Дима\\PycharmProjects\\resource\\chromedriver.exe')
     driver = webdriver.Chrome(service=s)
-    print('Start Test')
+    print('Start Test 1')
 
     login = Login_Page(driver)
     login.authorization()
 
     mp = Main_Page(driver)
-    mp.select_product()
+    mp.select_product_1()
 
     cp = Cart_Page(driver)
     cp.product_confirmation()
 
-    cip = Client_Informayion_Page(driver)
-    cip.input_information()
+    # cip = Client_Information_Page(driver)
+    # cip.input_information()
+    #
+    # p = Payment_Page(driver)
+    # p.payment()
+    #
+    # f = Finish_Page(driver)
+    # f.finish()
+    print('Finish Test 1')
 
-    p = Payment_Page(driver)
-    p.payment()
 
-    f = Finish_Page(driver)
-    f.finish()
+@pytest.mark.run(order=3)
+def test_buy_product_2():
+    s = Service('C:\\Users\\Дима\\PycharmProjects\\resource\\chromedriver.exe')
+    driver = webdriver.Chrome(service=s)
+    print('Start Test 2')
 
-    enter_shopping_cart = WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable((By.XPATH, "//div[@id='shopping_cart_container']")))
-    enter_shopping_cart.click()
-    print('Click Shopping Cart')
+    login = Login_Page(driver)
+    login.authorization()
+
+    mp = Main_Page(driver)
+    mp.select_product_2()
+
+    cp = Cart_Page(driver)
+    cp.product_confirmation()
+    print('Finish Test 2')
+
+
+@pytest.mark.run(order=1)
+def test_buy_product_3():
+    s = Service('C:\\Users\\Дима\\PycharmProjects\\resource\\chromedriver.exe')
+    driver = webdriver.Chrome(service=s)
+    print('Start Test 3')
+
+    login = Login_Page(driver)
+    login.authorization()
+
+    mp = Main_Page(driver)
+    mp.select_product_3()
+
+    cp = Cart_Page(driver)
+    cp.product_confirmation()
+    print('Finish Test 3')

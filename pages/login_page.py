@@ -1,7 +1,8 @@
-from base.base_class import Base
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
+from base.base_class import Base
 
 
 class Login_Page(Base):
@@ -37,15 +38,15 @@ class Login_Page(Base):
     # Выполняем необходимые действия с полученными полями
     def input_user_name(self, user_name):
         self.get_user_name().send_keys(user_name)
-        print('Input user name')
+        print('Input User Name')
 
     def input_password(self, password):
         self.get_password().send_keys(password)
-        print('Input password')
+        print('Input Password')
 
     def click_login_button(self):
         self.get_login_button().click()
-        print('Click login_button')
+        print('Click Login Button')
 
     # Methods
 

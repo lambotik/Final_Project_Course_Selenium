@@ -1,7 +1,8 @@
-from base.base_class import Base
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
+from base.base_class import Base
 
 
 class Cart_Page(Base):
@@ -23,7 +24,7 @@ class Cart_Page(Base):
     # Выполняем необходимые действия с полученными полями
     def click_button_checkout(self):
         self.get_button_checkout().click()
-        print('Click button checkout')
+        print('Click Button Checkout')
 
     # Methods
     def product_confirmation(self):
