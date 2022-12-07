@@ -3,6 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class Cart_Page(Base):
@@ -28,5 +29,7 @@ class Cart_Page(Base):
 
     # Methods
     def product_confirmation(self):
+        Logger.add_start_step(method='product_confirmation')
         self.get_current_url()
         self.click_button_checkout()
+        Logger.add_end_step(url=self.driver.current_url, method='product_confirmation')
