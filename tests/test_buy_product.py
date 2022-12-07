@@ -2,13 +2,16 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
+from pages.client_information_page import Client_Information_Page
 from pages.cart_page import Cart_Page
+from pages.finish_page import Finish_Page
 from pages.login_page import Login_Page
 from pages.main_page import Main_Page
+from pages.payment_page import Payment_Page
 
 
-@pytest.mark.run(order=2)
-def test_buy_product_1():
+#@pytest.mark.run(order=2)
+def test_buy_product_1(set_group):
     s = Service('C:\\Users\\Дима\\PycharmProjects\\resource\\chromedriver.exe')
     driver = webdriver.Chrome(service=s)
     print('Start Test 1')
@@ -22,18 +25,18 @@ def test_buy_product_1():
     cp = Cart_Page(driver)
     cp.product_confirmation()
 
-    # cip = Client_Information_Page(driver)
-    # cip.input_information()
-    #
-    # p = Payment_Page(driver)
-    # p.payment()
-    #
-    # f = Finish_Page(driver)
-    # f.finish()
+    cip = Client_Information_Page(driver)
+    cip.input_information()
+
+    p = Payment_Page(driver)
+    p.payment()
+
+    f = Finish_Page(driver)
+    f.finish()
     print('Finish Test 1')
 
 
-@pytest.mark.run(order=3)
+#@pytest.mark.run(order=3)
 def test_buy_product_2():
     s = Service('C:\\Users\\Дима\\PycharmProjects\\resource\\chromedriver.exe')
     #s = Service(r'C:\Users\Дима\PycharmProjects\resource\chromedriver.exe')
@@ -51,7 +54,7 @@ def test_buy_product_2():
     print('Finish Test 2')
 
 
-@pytest.mark.run(order=1)
+#@pytest.mark.run(order=1)
 def test_buy_product_3():
     s = Service('C:\\Users\\Дима\\PycharmProjects\\resource\\chromedriver.exe')
     driver = webdriver.Chrome(service=s)

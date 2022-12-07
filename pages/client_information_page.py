@@ -5,7 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
 
 
-class Client_Informayion_Page(Base):
+class Client_Information_Page(Base):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
