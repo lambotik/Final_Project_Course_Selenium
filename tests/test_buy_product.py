@@ -35,8 +35,8 @@ def test_buy_product_1():
 
 @pytest.mark.run(order=3)
 def test_buy_product_2():
-    #s = Service('C:\\Users\\Дима\\PycharmProjects\\resource\\chromedriver.exe')
-    s = Service(r'C:\Users\Дима\PycharmProjects\resource\chromedriver.exe')
+    s = Service('C:\\Users\\Дима\\PycharmProjects\\resource\\chromedriver.exe')
+    #s = Service(r'C:\Users\Дима\PycharmProjects\resource\chromedriver.exe')
     driver = webdriver.Chrome(service=s)
     print('Start Test 2')
 
