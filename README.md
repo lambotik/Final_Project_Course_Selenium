@@ -1,6 +1,6 @@
 # Automation-and-Programming-by-Python-and-Selenium
 
-## Course: Testing:Automation and Python Programming.Selenium
+## Структура проекта
 
 - Директорий
   проекта [base](https://github.com/lambotik/Final-Project-Course-Selenium/tree/main/base), [pages](https://github.com/lambotik/Final-Project-Course-Selenium/tree/main/pages), [screen](https://github.com/lambotik/Final-Project-Course-Selenium/tree/main/screen), [tests](https://github.com/lambotik/Final-Project-Course-Selenium/tree/main/tests), [utilities](https://github.com/lambotik/Final-Project-Course-Selenium/tree/main/utilities)
